@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import getParser from './parsers.js'
 
 const readFile = (filepath) => {
   const absPath = path.resolve(process.cwd(), filepath)
@@ -7,19 +8,11 @@ const readFile = (filepath) => {
   return data
 }
 
-const parse = (data, ext) => {
-  switch (ext) {
-    case '.json':
-      return JSON.parse(data)
-    default:
-      throw new Error('Unsupported file extension')
-  }
-}
-
 const getData = (filepath) => {
   const ext = path.extname(filepath)
+  const parser = getParser(ext)
   const data = readFile(filepath)
-  return parse(data, ext)
+  return parser(data)
 }
 
 export default getData
