@@ -15,3 +15,12 @@ test('gendiff compares flat json files (stylish)', () => {
 
   expect(result).toMatchSnapshot()
 })
+
+test('gendiff compares flat yaml files (stylish)', () => {
+  const file1 = getFixturePath('file1.yml')
+  const file2 = getFixturePath('file2.yml')
+
+  const result = genDiff(file1, file2)
+
+  expect(result).toMatchSnapshot()
+})
