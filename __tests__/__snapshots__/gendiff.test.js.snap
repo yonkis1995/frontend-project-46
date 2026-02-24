@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`gendiff compares flat json files (stylish) 1`] = `
+exports[`gendiff compares nested json files (stylish) 1`] = `
 "{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
+  - common: [object Object]
+  + common: [object Object]
+  - group1: [object Object]
+  + group1: [object Object]
+  - group2: [object Object]
+  + group3: [object Object]
 }"
 `;
 
-exports[`gendiff compares flat yaml files (stylish) 1`] = `
+exports[`gendiff compares nested yaml files (stylish) 1`] = `
 "{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
+  - common: [object Object]
+  + common: [object Object]
+  - group1: [object Object]
+  + group1: [object Object]
+  - group2: [object Object]
+  + group3: [object Object]
 }"
 `;
