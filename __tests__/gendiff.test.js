@@ -7,18 +7,18 @@ const __dirname = path.dirname(__filename)
 
 const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', filename)
 
-test('gendiff compares flat json files (stylish)', () => {
-  const file1 = getFixturePath('file1.json')
-  const file2 = getFixturePath('file2.json')
+test('gendiff compares nested json files (stylish)', () => {
+  const file1 = getFixturePath('file1_nested.json')
+  const file2 = getFixturePath('file2_nested.json')
 
   const result = genDiff(file1, file2)
 
   expect(result).toMatchSnapshot()
 })
 
-test('gendiff compares flat yaml files (stylish)', () => {
-  const file1 = getFixturePath('file1.yml')
-  const file2 = getFixturePath('file2.yml')
+test('gendiff compares nested yaml files (stylish)', () => {
+  const file1 = getFixturePath('file1_nested.yml')
+  const file2 = getFixturePath('file2_nested.yml')
 
   const result = genDiff(file1, file2)
 
