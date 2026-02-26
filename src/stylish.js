@@ -46,7 +46,7 @@ const formatStylish = (tree) => {
           ]
 
         default:
-          throw new Error(`Unknown node type: ${type}`);
+          throw new Error(`Unknown node type: ${type}`)
       }
     })
 

@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const isObject = (value) => _.isPlainObject(value)
+const isObject = value => _.isPlainObject(value)
 
 const buildDiffTree = (obj1, obj2) => {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)))
