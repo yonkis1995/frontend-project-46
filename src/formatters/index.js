@@ -1,11 +1,17 @@
-import formatStylish from './stylish.js'
+import stylish from './stylish.js'
+import plain from './plain.js'
 
 const formatters = {
-  stylish: formatStylish,
+  stylish,
+  plain,
 }
 
 export default (tree, formatName) => {
   const formatter = formatters[formatName]
-  if (!formatter) throw new Error(`Unknown format: ${formatName}`)
+
+  if (!formatter) {
+    throw new Error(`Unknown format: ${formatName}`)
+  }
+
   return formatter(tree)
 }
