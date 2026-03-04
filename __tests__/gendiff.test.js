@@ -24,3 +24,21 @@ test('gendiff compares nested yaml files (stylish)', () => {
 
   expect(result).toMatchSnapshot()
 })
+
+test('gendiff compares nested json files (plain)', () => {
+  const file1 = getFixturePath('file1_nested.json')
+  const file2 = getFixturePath('file2_nested.json')
+
+  const result = genDiff(file1, file2, 'plain')
+
+  expect(result).toMatchSnapshot()
+})
+
+test('gendiff compares nested yaml files (plain)', () => {
+  const file1 = getFixturePath('file1_nested.yml')
+  const file2 = getFixturePath('file2_nested.yml')
+
+  const result = genDiff(file1, file2, 'plain')
+
+  expect(result).toMatchSnapshot()
+})
