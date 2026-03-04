@@ -1,6 +1,6 @@
 import getData from './parseFile.js'
 import buildDiffTree from './buildDiffTree.js'
-import formatStylish from './stylish.js'
+import format from './formatters/index.js'
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const parsedData1 = getData(filepath1)
@@ -8,11 +8,7 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
 
   const diffTree = buildDiffTree(parsedData1, parsedData2)
 
-  if (formatName === 'stylish') {
-    return formatStylish(diffTree)
-  }
-
-  throw new Error(`Unknown format: ${formatName}`)
+  return format(diffTree, formatName)
 }
 
 export default genDiff
