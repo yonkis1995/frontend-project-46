@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/yonkis1995/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/yonkis1995/frontend-project-46/actions)",
+  "description": "CLI tool to compare configuration files",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
